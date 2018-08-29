@@ -90,6 +90,7 @@ export class ChecksAPI {
    * @param token The check unique token
    */
   public deleteCheck(token: string): Promise<Deleted> {
+    this.checkApiKey();
     const endpoint = Endpoint.checks(token);
     return this.requestService.delete(endpoint);
   }

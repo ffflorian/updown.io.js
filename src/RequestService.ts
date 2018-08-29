@@ -51,15 +51,17 @@ export class RequestService {
       stringMatch: 'string_match',
     };
 
-    const mappedParameters: {[index: string]: string | boolean | number | CustomHeaders} = {};
+    const mappedParameters: {[index: string]: string | boolean | number | CustomHeaders | string[]} = {};
 
     if (requestParameters) {
       for (const parameterKey in requestParameters) {
         let parameterValue = requestParameters[parameterKey as keyof RequestOptions];
         if (parameterValue) {
           const mappedOption = parameterKey in map ? map[parameterKey] : parameterKey;
-          if (parameterValue instanceof Array) {
-            parameterValue = parameterValue.join(',');
+          if (typeof parameterValue === 'object' && !(parameterValue instanceof Array)) {
+            for (const customHeader in parameterValue) {
+              mappedParameters[`${mappedOption}[${customHeader}]`] = parameterValue[customHeader];
+            }
           } else {
             mappedParameters[mappedOption] = parameterValue;
           }
