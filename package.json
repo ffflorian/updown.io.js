@@ -1,0 +1,42 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "@types/node": "10.9.2",
+    "axios": "0.18.0"
+  },
+  "description": "An updown.io API client",
+  "devDependencies": {
+    "jasmine": "3.2.0",
+    "nock": "9.6.1",
+    "prettier": "1.14.2",
+    "rimraf": "2.6.2",
+    "touch": "3.1.0",
+    "typedoc": "0.12.0",
+    "typescript": "3.0.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "updown.io",
+    "updown",
+    "updownio"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "updown.io",
+  "repository": "https://github.com/ffflorian/updown.io.js.git",
+  "scripts": {
+    "build": "tsc",
+    "build:docs": "typedoc --out docs/ --mode modules --excludePrivate --excludeExternals --exclude \"**/*(index|Endpoints|RequestService).ts\"",
+    "clear": "rimraf dist",
+    "clear:docs": "rimraf docs",
+    "dist": "yarn clear && yarn build",
+    "dist:docs": "yarn clear:docs && yarn build:docs && nodetouch docs/.nojekyll",
+    "prettier": "prettier --write \"src/**/*.ts\" \"spec/**/*.js\"",
+    "test": "yarn dist && jasmine"
+  },
+  "types": "dist/index.d.ts",
+  "version": "1.2.0"
+}
