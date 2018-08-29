@@ -11,8 +11,15 @@ export class ChecksAPI {
     this.requestService = requestService;
   }
 
+  private checkApiKey() {
+    if (!this.requestService.isApiKeySet()) {
+      throw new Error('An API key needs to be set in order to use the checks API.');
+    }
+  }
+
   /** List all your checks. */
   public getChecks(): Promise<Check[]> {
+    this.checkApiKey();
     const endpoint = Endpoint.checks();
     return this.requestService.get(endpoint);
   }

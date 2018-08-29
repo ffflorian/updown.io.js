@@ -14,7 +14,7 @@ export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
 export enum HttpStatus {
   'FORBIDDEN' = 403,
   'NOT_FOUND' = 404,
-  'UNAUTHORIZED' = 403,
+  'UNAUTHORIZED' = 401,
 }
 
 export interface RequestOptions {

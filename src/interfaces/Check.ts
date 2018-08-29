@@ -9,7 +9,7 @@ export interface Check {
   down: boolean;
   enabled: boolean;
   error: string | null;
-  favicon_url: string;
+  favicon_url: string | null;
   last_check_at: string;
   last_status: number;
   mute_until: string | null;

@@ -17,6 +17,10 @@ export class RequestService {
     }
   }
 
+  public isApiKeySet(): boolean {
+    return Boolean(this.apiKey);
+  }
+
   public delete<T>(endpoint: string, parameters?: RequestOptions): Promise<T> {
     return this.request<T>('delete', endpoint, parameters);
   }
