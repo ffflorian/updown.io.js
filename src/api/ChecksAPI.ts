@@ -69,7 +69,7 @@ export class ChecksAPI {
     const endpoint = Endpoint.checks();
     const params = {
       url,
-      ...options
+      ...options,
     };
     return this.requestService.post(endpoint, params);
   }

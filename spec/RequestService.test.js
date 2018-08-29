@@ -3,7 +3,7 @@
 const {UpdownIO} = require('../dist/');
 const nock = require('nock');
 
-fdescribe('RequestService', () => {
+describe('RequestService', () => {
   /** @type {UpdownIO} */
   let updownIO;
 
@@ -20,9 +20,13 @@ fdescribe('RequestService', () => {
         expect(queryObject['api-key']).toBe(myApiKey);
         return true;
       })
-      .reply(200, {}, {
-        'Content-Type': 'application/json',
-      });
+      .reply(
+        200,
+        {},
+        {
+          'Content-Type': 'application/json',
+        }
+      );
 
     await updownIO.api.checks.getChecks();
   });
@@ -38,12 +42,16 @@ fdescribe('RequestService', () => {
         expect(queryObject.custom_headers).toEqual(customHeaders);
         return true;
       })
-      .reply(200, {}, {
-        'Content-Type': 'application/json',
-      });
+      .reply(
+        200,
+        {},
+        {
+          'Content-Type': 'application/json',
+        }
+      );
 
     await updownIO.api.checks.addCheck('https://example.com', {
-      customHeaders
+      customHeaders,
     });
   });
 
@@ -56,12 +64,16 @@ fdescribe('RequestService', () => {
         expect(queryObject.disabled_locations).toEqual(disabledLocations);
         return true;
       })
-      .reply(200, {}, {
-        'Content-Type': 'application/json',
-      });
+      .reply(
+        200,
+        {},
+        {
+          'Content-Type': 'application/json',
+        }
+      );
 
     await updownIO.api.checks.addCheck('https://example.com', {
-      disabledLocations
+      disabledLocations,
     });
   });
 });

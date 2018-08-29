@@ -7,5 +7,5 @@ export interface Nodes {
     ip6: string;
     lat: number;
     lng: number;
-  }
+  };
 }
