@@ -71,15 +71,15 @@
 				<h3 id="example">Example</h3>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {UpdownIO} <span class="hljs-keyword">from</span> <span class="hljs-string">'updown.io'</span>;
 
-<span class="hljs-keyword">const</span> updownIO = <span class="hljs-keyword">new</span> UpdownIO(<span class="hljs-string">'my-api-key'</span>);
+<span class="hljs-keyword">const</span> updownIO = <span class="hljs-keyword">new</span> UpdownIO(<span class="hljs-string">'my-api-key'</span>); <span class="hljs-comment">// API key is only required for checks API</span>
 
 UpdownIO.api.checks.getChecks()
-  .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+  .then(<span class="hljs-function"><span class="hljs-params">checks</span> =&gt;</span> {
     <span class="hljs-comment">//</span>
   })
 
 updownIO.api.nodes.getNodes()
-  .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+  .then(<span class="hljs-function"><span class="hljs-params">nodes</span> =&gt;</span> {
     <span class="hljs-comment">// ...</span>
   })</code></pre>
 				<h2 id="build-and-test">Build and test</h2>
