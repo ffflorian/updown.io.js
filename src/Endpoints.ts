@@ -31,8 +31,8 @@ export namespace Endpoint {
     }
   }
 
-  export function checks(): string {
-    return `/${CHECKS}/`;
+  export function checks(token?: string): string {
+    return `/${CHECKS}/` + (token ? encode(token) : '');
   }
 
   export function nodes(): string {
