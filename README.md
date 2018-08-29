@@ -15,15 +15,15 @@ Run `yarn add updown.io` or `npm install updown.io`.
 ```ts
 import {UpdownIO} from 'updown.io';
 
-const updownIO = new UpdownIO('my-api-key');
+const updownIO = new UpdownIO('my-api-key'); // API key is only required for checks API
 
 UpdownIO.api.checks.getChecks()
-  .then(response => {
+  .then(checks => {
     //
   })
 
 updownIO.api.nodes.getNodes()
-  .then(response => {
+  .then(nodes => {
     // ...
   })
 ```
