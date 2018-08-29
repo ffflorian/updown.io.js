@@ -49,21 +49,21 @@ export interface MetricsOptions {
 
 export interface CheckOptions {
   /** Human readable name */
-  alias: string;
+  alias?: string;
   /** APDEX threshold in seconds (0.125, 0.25, 0.5, 1.0 or 2.0) */
-  apdex_t: number;
+  apdex_t?: number;
   /** The HTTP headers you want in updown requests. Ex: custom_headers[X-Api-Key]=xxxxxxxxx */
-  customHeaders: CustomHeaders;
+  customHeaders?: CustomHeaders;
   /** Disabled monitoring locations. It's an array of abbreviated location names. Can be any of these: ["lan", "mia", "bhs", "gra", "fra", "sin", "tok", "syd"]. Ex: disabled_locations[]=lan&disabled_locations[]=syd */
-  disabledLocations: string[];
+  disabledLocations?: string[];
   /** Is the check enabled (true or false) */
-  enabled: boolean;
+  enabled?: boolean;
   /** Mute notifications until given time, accepts a time, 'recovery' or 'forever' */
-  mute_until: string;
+  mute_until?: string;
   /** Interval in seconds (15, 30, 60, 120, 300, 600, 1800 or 3600) */
-  period: number;
+  period?: number;
   /** Shall the status page be public (true or false) */
-  published: boolean;
+  published?: boolean;
   /** Search for this string in the page */
-  string_match: string;
+  string_match?: string;
 }
