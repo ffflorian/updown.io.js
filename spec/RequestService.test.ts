@@ -1,11 +1,8 @@
-//@ts-check
-
-const {UpdownIO} = require('../dist/');
-const nock = require('nock');
+import {UpdownIO} from '../src';
+import * as nock from 'nock';
 
 describe('RequestService', () => {
-  /** @type {UpdownIO} */
-  let updownIO;
+  let updownIO: UpdownIO;
 
   beforeEach(() => (updownIO = new UpdownIO('my-api-key')));
 
@@ -16,7 +13,7 @@ describe('RequestService', () => {
 
     nock('https://updown.io')
       .get('/api/checks/')
-      .query(queryObject => {
+      .query((queryObject: {'api-key': string}) => {
         expect(queryObject['api-key']).toBe(myApiKey);
         return true;
       })
@@ -38,7 +35,7 @@ describe('RequestService', () => {
 
     nock('https://updown.io')
       .post('/api/checks/')
-      .query(queryObject => {
+      .query((queryObject: {custom_headers: {'X-My-Header': string}}) => {
         expect(queryObject.custom_headers).toEqual(customHeaders);
         return true;
       })
@@ -60,7 +57,7 @@ describe('RequestService', () => {
 
     nock('https://updown.io')
       .post('/api/checks/')
-      .query(queryObject => {
+      .query((queryObject: {disabled_locations: string[]}) => {
         expect(queryObject.disabled_locations).toEqual(disabledLocations);
         return true;
       })
