@@ -1,8 +1,8 @@
 import {URL} from 'url';
 
-import {RequestService} from './RequestService';
-import {ClientOptions, API} from './interfaces/';
 import {ChecksAPI, NodesAPI} from './api/';
+import {API, ClientOptions} from './interfaces/';
+import {RequestService} from './RequestService';
 
 export class UpdownIO {
   public api: API;

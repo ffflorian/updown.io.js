@@ -6,7 +6,7 @@ import {ClientOptions, CustomHeaders, HttpMethod, RequestOptions} from './interf
 
 export class RequestService {
   private apiUrl = new URL('/api', 'https://updown.io');
-  private apiKey?: string;
+  private readonly apiKey?: string;
 
   constructor(options?: ClientOptions) {
     if (options) {
@@ -55,7 +55,7 @@ export class RequestService {
 
     if (requestParameters) {
       for (const parameterKey in requestParameters) {
-        let parameterValue = requestParameters[parameterKey as keyof RequestOptions];
+        const parameterValue = requestParameters[parameterKey as keyof RequestOptions];
         if (parameterValue) {
           const mappedOption = parameterKey in map ? map[parameterKey] : parameterKey;
           if (typeof parameterValue === 'object' && !(parameterValue instanceof Array)) {

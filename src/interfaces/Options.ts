@@ -39,11 +39,11 @@ export interface RequestOptions {
 }
 
 export interface MetricsOptions {
-  /** Start time, default to 1 month ago  */
+  /** Start time, default to 1 month ago */
   from?: string;
   /** Group data by 'time' (hour) or 'host' (location) */
   group: MetricsGroup;
-  /** End time, default to now ­*/
+  /** End time, default to now */
   to?: string;
 }
 

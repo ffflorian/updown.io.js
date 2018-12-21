@@ -1,8 +1,8 @@
 import {URL} from 'url';
 
 import {Endpoint} from '../Endpoints';
+import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
 import {RequestService} from '../RequestService';
-import {CheckOptions, Check, Downtime, Metrics, MetricsOptions, Deleted} from '../interfaces';
 
 export class ChecksAPI {
   private readonly requestService: RequestService;

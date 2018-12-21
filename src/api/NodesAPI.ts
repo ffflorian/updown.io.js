@@ -1,8 +1,8 @@
 import {URL} from 'url';
 
 import {Endpoint} from '../Endpoints';
-import {RequestService} from '../RequestService';
 import {Nodes} from '../interfaces';
+import {RequestService} from '../RequestService';
 
 export class NodesAPI {
   private readonly requestService: RequestService;
