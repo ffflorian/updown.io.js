@@ -1,4 +1,4 @@
-# updown.io.js [![Build Status](https://api.travis-ci.org/ffflorian/updown.io.js.svg?branch=master)](https://travis-ci.org/ffflorian/updown.io.js/) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/updown.io.js)](https://dependabot.com)
+# updown.io.js [![Build Status](https://api.travis-ci.org/ffflorian/updown.io.js.svg?branch=master)](https://travis-ci.org/ffflorian/updown.io.js/) [![npm version](https://img.shields.io/npm/v/updown.io.svg?style=flat)](https://www.npmjs.com/package/updown.io) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/updown.io.js)](https://dependabot.com)
 
 An [updown.io](https://updown.io) API client. For a documentation on the API see https://updown.io/api.
 
