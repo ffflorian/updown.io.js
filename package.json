@@ -1,13 +1,13 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@types/node": "11.10.5",
     "axios": "0.18.0"
   },
   "description": "An updown.io API client",
   "devDependencies": {
     "@types/jasmine": "3.3.9",
     "@types/nock": "9.3.1",
+    "@types/node": "11.10.5",
     "jasmine": "3.3.1",
     "nock": "10.0.6",
     "prettier": "1.16.4",
@@ -35,7 +35,7 @@
   "repository": "https://github.com/ffflorian/updown.io.js.git",
   "scripts": {
     "build": "tsc",
-    "build:docs": "typedoc --out docs/ --mode modules --excludePrivate --excludeExternals --exclude \"**/*(index|Endpoints|RequestService).ts\"",
+    "build:docs": "typedoc",
     "clear": "rimraf dist",
     "clear:docs": "rimraf docs",
     "dist": "yarn clear && yarn build",
@@ -46,6 +46,5 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.ts\"",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "types": "dist/index.d.ts",
   "version": "1.1.2"
 }
